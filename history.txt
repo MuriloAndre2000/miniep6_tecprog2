@@ -1,0 +1,27 @@
+NOME: Murilo André Gomes Felipe
+NUSP: 11221863
+
+
+Em primeira mão foi criado os arquivos e pastas
+Utilizei os códigos no Notion para criar os arquivos about, index e caddyfile
+
+Comandos Rodados:
+
+
+
+docker image build . -t custom-caddy:2.5.0-alpine
+
+docker container run             \
+	--name my-caddy-server         \
+	-p 8080:80                     \
+	-d custom-caddy:2.5.0-alpine
+
+docker container stop my-caddy-server
+
+docker container rm my-caddy-server
+
+docker container run             \
+	--name my-caddy-server         \
+	-p 8080:80                     \
+	-d custom-caddy:2.5.0-alpine \
+	-v $PWD/web:/usr/src/pages/
